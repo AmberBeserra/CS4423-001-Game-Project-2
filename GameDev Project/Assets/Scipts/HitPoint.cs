@@ -7,7 +7,6 @@ public class HitPoint
 	//Fields
 	int maxHP;
 	int currentHP;
-	
 	//Properties
 	public int Health
 	{
@@ -31,7 +30,6 @@ public class HitPoint
 			maxHP = value;
 		}
 	}
-	
 	//Constructors
 	public HitPoint(int H, int mH)
 	{
@@ -44,9 +42,7 @@ public class HitPoint
 		currentHP = H;
 		maxHP = H;
 	}
-	
 	//Methods
-	
 	public void Damage(int dmg)
 	{
 		if(currentHP > 0)
@@ -59,7 +55,6 @@ public class HitPoint
 			}
 		}
 	}
-	
 	public void Heal(int heal)
 	{
 		if(currentHP < maxHP)//heals only when there is damage to heal
@@ -76,7 +71,6 @@ public class HitPoint
 			Debug.Log("MAX HP");
 		}
 	}
-	
 	public void HPMaxInc(int up)
 	{
 		maxHP += up;

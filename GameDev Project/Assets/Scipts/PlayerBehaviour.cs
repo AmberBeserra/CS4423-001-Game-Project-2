@@ -4,57 +4,51 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-	//public HitPoint playerHP = new HitPoint(20, 20);
-	
 	void Start()
 	{
-		
 	}
-	
 	void Update()
 	{
-		//THIS IS FOR TESTING PURPOSES
+		//Test Inputs for methods calls
 		if(Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			PlayerIsDamaged(5);
-			Debug.Log("HP: " + GameManager.gameManager.playerHP.Health);
 		}
 		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			PlayerIsHealed(5);
-			Debug.Log("HP: " + GameManager.gameManager.playerHP.Health);
 		}
 		if(Input.GetKeyDown(KeyCode.RightArrow))
 		{
 			PlayerMaxUp(5);
-			Debug.Log("MAX: " + GameManager.gameManager.playerHP.HealthMax);
 		}
 		if(Input.GetKeyDown(KeyCode.LeftArrow))
 		{
 			PlayerMaxDown(5);
-			Debug.Log("MAX: " + GameManager.gameManager.playerHP.HealthMax);
 		}
-		
 	}
-	
 	private void PlayerIsDamaged(int dmg)
 	{
+		//Debug.Log("player, dmg: " + dmg);
 		GameManager.gameManager.playerHP.Damage(dmg);
-		//Debug.Log(GameManager.gameManager.playerHP.Health);
+		Debug.Log("player, hp: " + GameManager.gameManager.playerHP.Health);
 	}
 	private void PlayerIsHealed(int heal)
 	{
+		//Debug.Log("player, heal: " + heal);
 		GameManager.gameManager.playerHP.Heal(heal);
-		//Debug.Log(GameManager.gameManager.playerHP.Health);
+		Debug.Log("player, hp: " + GameManager.gameManager.playerHP.Health);
 	}
 	private void PlayerMaxUp(int up)
 	{
+		//Debug.Log("player, max hp up: " + up);
 		GameManager.gameManager.playerHP.HPMaxInc(up);
-		//Debug.Log(GameManager.gameManager.playerHP.HealthMax);
+		Debug.Log("player, hpMax: " + GameManager.gameManager.playerHP.HealthMax);
 	}
 	private void PlayerMaxDown(int down)
 	{
+		///Debug.Log("player, max hp up: " + up);
 		GameManager.gameManager.playerHP.HPMaxDec(down);
-		//Debug.Log(GameManager.gameManager.playerHP.HealthMax);
+		Debug.Log("player, hpMax: " + GameManager.gameManager.playerHP.HealthMax);
 	}
 }
