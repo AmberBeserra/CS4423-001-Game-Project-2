@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+	public HitPoint enemyHealth = new HitPoint(10);
+	public int damage = 5;
 	void Start()
 	{
 	}
@@ -12,7 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
 		//THIS IS FOR TESTING PURPOSES
 		if(Input.GetKeyDown(KeyCode.S))
 		{
-			EnemyIsDamaged(5);
+			//EnemyIsDamaged(5);
 		}
 		if(Input.GetKeyDown(KeyCode.W))
 		{
@@ -27,11 +29,11 @@ public class EnemyBehaviour : MonoBehaviour
 			EnemyMaxDown(5);
 		}
 	}
-	private void EnemyIsDamaged(int dmg)
+	public void EnemyIsDamaged(int dmg)
 	{
 		//Debug.Log("enemy, dmg: " + dmg);
-		GameManager.gameManager.enemyHP.Damage(dmg);
-		Debug.Log("enemy, hp: " + GameManager.gameManager.enemyHP.Health);
+		enemyHealth.Damage(5);
+		Debug.Log("enemy, hp: " + enemyHealth.Health);
 	}
 	private void EnemyIsHealed(int heal)
 	{
