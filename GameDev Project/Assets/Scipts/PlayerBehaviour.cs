@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
 	//public HitPoint playerHP = new HitPoint(20, 20);
-	
+	private GameManager gameManager;
+
 	void Start()
 	{
-		
-	}
+		/*gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+		gameManager.ScoreAfterMonsterDie();
+        gameManager.ScoreAfterMonsterDie();
+        gameManager.ScoreAfterMonsterDie();
+        gameManager.ScoreAfterMonsterDie();*/
+		//use this for the MonsterBehaviour, I just could'nt find the script
+    }
 	
 	void Update()
 	{
