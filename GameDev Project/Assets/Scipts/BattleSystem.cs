@@ -21,6 +21,8 @@ public class BattleSystem : MonoBehaviour
     public Text enemyText;
     public Text turnText;
     public Slider slider;
+    public GameObject attackButton;
+    public GameObject blockButton;
 
     public BattleState state;
     // Start is called before the first frame update
@@ -54,6 +56,8 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         turnText.text = "Player's Turn";
+        attackButton.SetActive(true);
+        blockButton.SetActive(true);
     }
     //handles what happens when the attack button is clicked
     IEnumerator PlayerAttack()
@@ -62,6 +66,8 @@ public class BattleSystem : MonoBehaviour
         bool dead = enemyUnit.Damaged(playerUnit.getDamage());
         enemyText.text = "Evil Slime " + enemyUnit.unitHP.Health + "/" + enemyUnit.unitHP.HealthMax;
         turnText.text = "Player Attacks!";
+        attackButton.SetActive(false);
+        blockButton.SetActive(false);
         yield return new WaitForSeconds(2f);
 
         if(dead)
@@ -73,7 +79,7 @@ public class BattleSystem : MonoBehaviour
         else
         {
             //enemy turn
-            state = BattleState.ENEMY;
+            state = BattleState.ENEMY;            
             StartCoroutine(enemyAttack());
         }
     }
@@ -83,8 +89,9 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.ATTACKED;
         turnText.text = "Player blocks!";
         blocking = true;
+        attackButton.SetActive(false);
+        blockButton.SetActive(false);
         yield return new WaitForSeconds(2f);
-
         state = BattleState.ENEMY;
         StartCoroutine(enemyAttack());
     }
