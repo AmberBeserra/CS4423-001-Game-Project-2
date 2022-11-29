@@ -59,7 +59,11 @@ public class HitPoint
 			}
 		}
 	}
-	
+	public void setHealth(int max)
+	{
+		currentHP = max;
+		maxHP = max;
+	}
 	public void Heal(int heal)
 	{
 		if(currentHP < maxHP)//heals only when there is damage to heal
