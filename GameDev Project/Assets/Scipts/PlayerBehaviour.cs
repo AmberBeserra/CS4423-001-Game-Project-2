@@ -10,12 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 	void Start()
 	{
-		/*gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-		gameManager.ScoreAfterMonsterDie();
-        gameManager.ScoreAfterMonsterDie();
-        gameManager.ScoreAfterMonsterDie();
-        gameManager.ScoreAfterMonsterDie();*/
-		//use this for the MonsterBehaviour, I just could'nt find the script
+		
     }
 	
 	void Update()
