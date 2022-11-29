@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYER, ENEMY, WIN, LOSE, ATTACKED }
 
 public class BattleSystem : MonoBehaviour
-{  
-    
+{
+    private GameManager gameManager;
     bool blocking = false;
     bool charging = false;
     bool dead = false;
@@ -30,6 +31,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.START;
         StartCoroutine(Setup());
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     IEnumerator Setup()
     {
@@ -134,7 +136,7 @@ public class BattleSystem : MonoBehaviour
                 turnText.text = "Attack Blocked";
             }            
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f); 
         turn++;
         //ends player block stance after blocking an attack
         if(blocking)
@@ -162,7 +164,8 @@ public class BattleSystem : MonoBehaviour
         if(state == BattleState.WIN)
         {
             turnText.text = "You win!";
-
+            gameManager.ScoreAfterMonsterDie();
+            SceneManager.LoadScene(3); //move to scene 3
         }
         else if (state == BattleState.LOSE)
         {
