@@ -13,6 +13,9 @@ public class BattleSystem : MonoBehaviour
     bool charging = false;
     bool dead = false;
 
+    public Animator myAnim;
+
+
     int turn = 1;
     
     Unit enemyUnit;
@@ -29,6 +32,8 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myAnim = GetComponent<Animator>();
+
         state = BattleState.START;
         StartCoroutine(Setup());
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -64,8 +69,15 @@ public class BattleSystem : MonoBehaviour
     //handles what happens when the attack button is clicked
     IEnumerator PlayerAttack()
     {
+
         state = BattleState.ATTACKED;
+
+
+   
+
+
         bool dead = enemyUnit.Damaged(playerUnit.getDamage());
+
         enemyText.text = "Evil Slime " + enemyUnit.unitHP.Health + "/" + enemyUnit.unitHP.HealthMax;
         turnText.text = "Player Attacks!";
         attackButton.SetActive(false);
@@ -89,6 +101,9 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerBlock()
     {
         state = BattleState.ATTACKED;
+
+        myAnim.Play("PCBlock");
+
         turnText.text = "Player blocks!";
         blocking = true;
         attackButton.SetActive(false);
@@ -178,6 +193,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYER)
             return;
+        myAnim.SetTrigger("Attack");
 
         StartCoroutine(PlayerAttack());
     }
