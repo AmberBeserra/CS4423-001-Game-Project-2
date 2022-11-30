@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ea2411368c1c94d9a2356377c8aca5, type: 3}
+  m_Name: Lackluster Potion
+  m_EditorClassIdentifier: 
+  item: Lackluster Potion
+  description: A potion thats well past its sell by date, heals for x HP.
+  price: 1
+  image: {fileID: 0}
