@@ -6,13 +6,18 @@ public class Unit : MonoBehaviour
 {
     public int damage;
 
+	public Animator myAnim;
+
     public HitPoint unitHP = new HitPoint(20);
 
     public bool Damaged(int dmg)
 	{
 		unitHP.Damage(dmg);
 
-		if(unitHP.Health <= 0)//negative or 0
+
+		//myAnim.SetTrigger("Damaged");
+
+		if (unitHP.Health <= 0)//negative or 0
 			{
 				Debug.Log("DEAD");
 				return true;
