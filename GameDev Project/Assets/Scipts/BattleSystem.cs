@@ -23,6 +23,8 @@ public class BattleSystem : MonoBehaviour
 
     public Text playerText;
     public Text enemyText;
+    public Text potion1;
+    public Text potion2;
     public Text turnText;
     public Slider slider;
     public GameObject attackButton;
@@ -40,6 +42,9 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator Setup()
     {
+        potion1.text = "Potion1: " + FindObjectOfType<GameManager>().GetPotions();
+        potion2.text = "Potion2: " + FindObjectOfType<GameManager>().GetPotions2();
+
         playerUnit = GameObject.Find("PCfacingright").GetComponent<Unit>();
         enemyUnit = GameObject.Find("slime").GetComponent<Unit>();
 

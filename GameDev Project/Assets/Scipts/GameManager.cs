@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
 	public Text GoldToScore;
 
 	int CurrentScore;
+	static int weakPotion = 0;
+	static int strongPotion = 0;
+
+	public GameObject weakPotionButton;
+    public GameObject strongPotionButton;
+	public GameObject continueButton;	
 
 	void Awake()
 	{
@@ -83,9 +89,53 @@ public class GameManager : MonoBehaviour
 		else
 		{
 			CurrentScore -= 60; //otherwise, subtracts correct amount of gold from CurrentScore and update the gold counter on screen
-			GoldToScore.text = CurrentScore.ToString();
+			//GoldToScore.text = CurrentScore.ToString();
 			PlayerPrefs.SetInt("gold_score_counter", CurrentScore);
 			//add item to player inventory
 		}
+	}
+
+	public void onWeakPotionButton()
+     {
+        CurrentScore = PlayerPrefs.GetInt("gold_score_counter");
+        if (CurrentScore < 60) //player can't spend more gold than the already have, provides an error message
+        {
+            Debug.Log("You don't have enough gold for this!");
+        }
+        else
+        {
+            CurrentScore -= 60; //otherwise, subtracts correct amount of gold from CurrentScore and update the gold counter on screen
+            //GoldToScore.text = CurrentScore.ToString();
+            PlayerPrefs.SetInt("gold_score_counter", CurrentScore);
+            //add item to player inventory
+			weakPotion++;
+        }
+    }
+	public void onStrongPotionButton()
+	 {
+        CurrentScore = PlayerPrefs.GetInt("gold_score_counter");
+        if (CurrentScore <  80) //player can't spend more gold than the already have, provides an error message
+        {
+            Debug.Log("You don't have enough gold for this!");
+        } else
+        {
+            CurrentScore -= 80; //otherwise, subtracts correct amount of gold from CurrentScore and update the gold counter on screen
+            GoldToScore.text = CurrentScore.ToString();
+            PlayerPrefs.SetInt("gold_score_counter", CurrentScore);
+            //add item to player inventory
+			strongPotion++;
+        }
+    }
+	public void ContinueButton()
+	{
+		SceneManager.LoadScene("FirstBattle");
+	}
+	public int GetPotions()
+	{
+		return weakPotion;
+	}
+	public int GetPotions2()
+	{
+		return strongPotion;
 	}
 }
