@@ -30,6 +30,9 @@ public class BattleSystem : MonoBehaviour
     public GameObject attackButton;
     public GameObject blockButton;
 
+
+    public int scene;
+
     public BattleState state;
     // Start is called before the first frame update
     void Start()
@@ -194,12 +197,14 @@ public class BattleSystem : MonoBehaviour
     //handles the end of the battle 
     void EndBattle()
     {
+        scene = SceneManager.GetActiveScene().buildIndex;
         //put actions on game win or loss here
         if (state == BattleState.WIN)
         {
             turnText.text = "You win!";
             gameManager.ScoreAfterMonsterDie();
-            SceneManager.LoadScene(3); //move to scene 3
+            //SceneManager.LoadScene(3); //move to scene 3
+            SceneManager.LoadScene(scene + 1);
         }
         else if (state == BattleState.LOSE)
         {

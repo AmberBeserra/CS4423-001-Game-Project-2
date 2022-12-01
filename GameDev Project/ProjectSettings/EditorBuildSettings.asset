@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: dec4990ecc7d2a1458097606363ae771
   - enabled: 0
-    path: Assets/Scenes/Scene 1/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/SelectMenu.unity
-    guid: d587f80fa8daa29459f6801eef3ef047
-  - enabled: 1
-    path: Assets/Scenes/FirstBattle.unity
-    guid: b2492710a9845a840bca1cfdf43a4f3c
-  - enabled: 1
     path: Assets/Scenes/Scene 1/FirstScene.unity
     guid: 171286a58f307e543803d46b522e4cac
   - enabled: 1
     path: Assets/Scenes/How To Play.unity
     guid: 9c6c21f364315a748abd786f582e7a3b
+  - enabled: 1
+    path: Assets/Scenes/SelectMenu.unity
+    guid: d587f80fa8daa29459f6801eef3ef047
+  - enabled: 0
+    path: Assets/Scenes/Scene 1/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/FirstBattle.unity
+    guid: b2492710a9845a840bca1cfdf43a4f3c
+  - enabled: 1
+    path: Assets/Scenes/FinalBattle.unity
+    guid: 78648eaafc824644fbed904cb5d28aab
   m_configObjects: {}
