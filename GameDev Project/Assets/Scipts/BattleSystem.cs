@@ -24,6 +24,7 @@ public class BattleSystem : MonoBehaviour
     public Slider slider;
     public GameObject attackButton;
     public GameObject blockButton;
+    public GameObject tempButton;
 
     public BattleState state;
     // Start is called before the first frame update
@@ -187,7 +188,15 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYER)
             return;
 
+<<<<<<< Updated upstream
         StartCoroutine(PlayerBlock());
     } 
     
+=======
+    public void onTempButton()
+    {
+         gameManager.ScoreAfterMonsterDie();
+         SceneManager.LoadScene("Shop");
+    }
+>>>>>>> Stashed changes
 }
