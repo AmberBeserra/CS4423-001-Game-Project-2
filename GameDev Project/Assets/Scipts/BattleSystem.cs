@@ -151,6 +151,7 @@ public class BattleSystem : MonoBehaviour
         //does normal attack if no attack is being charged 
         else
         {
+            myAnim.SetTrigger("FinalSlimeAttack");
             turnText.text = "The enemy attacks!";
 
 
@@ -211,6 +212,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYER)
             return;
+
         myAnim.SetTrigger("Attack");
 
         StartCoroutine(PlayerAttack());
@@ -220,6 +222,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYER)
             return;
+
         myAnim.SetTrigger("Block");
         StartCoroutine(PlayerBlock());
     }
