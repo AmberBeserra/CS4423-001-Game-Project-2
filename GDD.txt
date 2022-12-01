@@ -1,0 +1,59 @@
+Game Development Documentation 
+
+Turn Based Rogue-Like
+
+Run resets if a character dies.
+Players take turns with the enemies.
+Dungeon Crawler, branching paths - tree style (converges towards boss encounter)
+
+Different character options. Each character has one type of weapon, they can upgrade these weapons throughout the run.
+
+Weapon durability?
+Negative character traits? Maybe be given a negative perk whenever you get a really good one or maybe characters have an innate weakness.
+Debuffs?
+Random events? Chests can pop up to give random buffs to player
+
+Eventually, the player can unlock alternative starting weapons for each character for different play styles i.e, the swordsman can switch to a greatsword or dual-blades.
+Character can choose from attacks, items, or abilities each turn
+Characters gain or upgrade attacks throughout the run. They can gain new attacks after defeating a main boss or mini boss.
+Character based skill tree level up after number of defeated enemies, Weapon based level up after bosses
+
+Multiple stages. Each stage has a branching tree style where the player can choose rooms to go to. These rooms can be fighting rooms, healing rooms, shops, or mini bosses.
+Fantasy themed
+2D characters, 3D backgrounds
+Player’s character will be 2D, enemies will be 2D as well. The Background will be 3D to add contrast. 
+Each stage will have a different background and enemy theme.
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+Game Development Documentation  
+ 
+Genre: Turn Based Rogue-Like 
+ 
+Run resets if a character dies. Players take turns with the enemies. 
+The game will be a dungeon crawler. There will be multiple stages that contain rooms within. Each stage will contain paths with a tree-based style that converges towards a boss encounter at the end. 
+ 
+The game will contain different character options. Each character has one type of weapon, i.e. swords or wands. They can upgrade these weapons throughout the run. 
+Eventually, the player can unlock alternative starting weapons for each character for different play styles i.e., the swordsman can switch to a great sword or dual blades. 
+The character will be able to choose from attacks, items, or abilities each turn. 
+ 
+Characters gain or upgrade attacks that are tied to their weapon throughout the run. They can gain new attacks and skills after defeating a main boss or mini boss: 
+Character based skill tree level up after number of defeated enemies or number of rooms.
+Weapon based level up after bosses. 
+Chance to get a negative perk when receiving some rare skills.
+ 
+Multiple stages. Each stage has a branching tree style where the player can choose rooms to go to. These rooms can be fighting rooms, mystery rooms, healing rooms, shops, or mini bosses. 
+Mystery rooms can include different events. Chests with buffs can appear, enemies can appear, or a shop can appear. 
+The game will be fantasy themed. Player’s character will be 2D, enemies will be 2D as well. The Background will be 3D to add contrast.  
+Each stage will have a different background and enemy theme. 
+ 
+ 
+
