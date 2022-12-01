@@ -18,7 +18,17 @@ public class GameManager : MonoBehaviour
 
 	public Text GoldToScore;
 
+<<<<<<< Updated upstream
 	int CurrentScore;
+=======
+	public int CurrentScore;
+	static int weakPotion = 0;
+	static int strongPotion = 0;
+
+	public GameObject weakPotionButton;
+    public GameObject strongPotionButton;
+	public GameObject continueButton;	
+>>>>>>> Stashed changes
 
 	void Awake()
 	{

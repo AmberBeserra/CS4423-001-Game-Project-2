@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Lackluster Potion
   description: A potion thats well past its sell by date, heals for x HP.
+<<<<<<< Updated upstream
   price: 60
+=======
+  price: 20
+>>>>>>> Stashed changes
   image: {fileID: 0}
