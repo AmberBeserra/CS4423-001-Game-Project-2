@@ -8,11 +8,13 @@ public class Shop : MonoBehaviour
     public ShopFoundation[] texts;
     public GoldItem gold;
     public GoldFoundation golden;
+    private GameManager gameManager;
 
-     void Start()
+    void Start()
     {
         LoadItems();
-        Gold();
+        //Gold();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     public void  LoadItems()
     {
@@ -25,12 +27,13 @@ public class Shop : MonoBehaviour
         }
 
     }
-    public void Gold()
+    /*public void Gold()
     {
         if (gold)
         {
             golden.goldAmountTxt.text = gold.goldAmount;
         }
-    }
+    }*/
+
     }
 
