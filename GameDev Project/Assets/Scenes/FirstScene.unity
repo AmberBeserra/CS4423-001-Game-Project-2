@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.091847636, g: 0.38351968, b: 0.4528302, a: 0.8862745}
+  m_Color: {r: 0.09019607, g: 0.22757354, b: 0.4509804, a: 0.8862745}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1323,6 +1323,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldToScore: {fileID: 0}
+  weakPotionButton: {fileID: 0}
+  strongPotionButton: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!4 &643463357
 Transform:
   m_ObjectHideFlags: 0
