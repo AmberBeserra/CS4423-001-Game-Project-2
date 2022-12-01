@@ -6,10 +6,13 @@ public class Shop : MonoBehaviour
 {
     public ShopItem[] shopItems;
     public ShopFoundation[] texts;
+    public GoldItem gold;
+    public GoldFoundation golden;
 
      void Start()
     {
         LoadItems();
+        Gold();
     }
     public void  LoadItems()
     {
@@ -19,6 +22,14 @@ public class Shop : MonoBehaviour
             texts[i].descriptionTxt.text = shopItems[i].description;
             texts[i].priceTxt.text = shopItems[i].price.ToString();
             texts[i].image = shopItems[i].image;
+        }
+
+    }
+    public void Gold()
+    {
+        if (gold)
+        {
+            golden.goldAmountTxt.text = gold.goldAmount;
         }
     }
     }
