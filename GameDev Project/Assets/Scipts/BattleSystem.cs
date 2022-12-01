@@ -118,6 +118,8 @@ public class BattleSystem : MonoBehaviour
     IEnumerator enemyAttack()
     {
         //checks if attack is already charged
+
+
         if(charging){
             turnText.text = "The enemy releases the charged attack!";
             yield return new WaitForSeconds(2f);
@@ -140,6 +142,10 @@ public class BattleSystem : MonoBehaviour
         //does normal attack if no attack is being charged 
         else {
             turnText.text = "The enemy attacks!";
+
+
+            myAnim.SetTrigger("FinalSlimeAttack");
+
             yield return new WaitForSeconds(2f);
             //checks if normal attack is blocked
             if(!blocking){
@@ -202,7 +208,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYER)
             return;
-
+        myAnim.SetTrigger("Block");
         StartCoroutine(PlayerBlock());
     } 
     
