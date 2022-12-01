@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene 1/FirstScene.unity
     guid: 171286a58f307e543803d46b522e4cac
+  - enabled: 1
+    path: Assets/Scenes/How To Play.unity
+    guid: 9c6c21f364315a748abd786f582e7a3b
   m_configObjects: {}
