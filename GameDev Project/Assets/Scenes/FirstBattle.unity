@@ -2074,6 +2074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713863966}
   - component: {fileID: 713863965}
+  - component: {fileID: 713863967}
   m_Layer: 0
   m_Name: Battle System
   m_TagString: Untagged
@@ -2093,6 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ceac2be7a331f41b08e75aafc9bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAnim: {fileID: 0}
   playerText: {fileID: 1659987580}
   enemyText: {fileID: 1897861428}
   potion1: {fileID: 245936259}
@@ -2117,6 +2119,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &713863967
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713863964}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a07e122d0497e3f4ab7a2b195aa7d8a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &776019204
 GameObject:
   m_ObjectHideFlags: 0
