@@ -27,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstBattleV2.unity
     guid: 1b96a649e17bd2a4e94e39e9d6e599e5
   - enabled: 1
+    path: Assets/Scenes/SecondScene 1.unity
+    guid: 37d572ed19766b54e82c82a0c23aef7f
+  - enabled: 1
+    path: Assets/Scenes/ShopV2.unity
+    guid: 2c5fe45240b5c2249bf7103460c7f3ee
+  - enabled: 1
     path: Assets/Scenes/FinalBattle.unity
     guid: 78648eaafc824644fbed904cb5d28aab
+  - enabled: 1
+    path: Assets/Scenes/Win Scene.unity
+    guid: b70c5c1b54a816b4f94543ddf3b3855b
   m_configObjects: {}
