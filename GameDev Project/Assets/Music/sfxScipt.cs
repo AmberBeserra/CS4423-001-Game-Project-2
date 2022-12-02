@@ -6,6 +6,8 @@ public class sfxScipt : MonoBehaviour
 {
     public AudioSource menuClick;
     public AudioSource goldSound;
+    public AudioSource swordSound;
+    public AudioSource blockSound;
 
     public void playMenuClick ()
     {
@@ -15,5 +17,15 @@ public class sfxScipt : MonoBehaviour
     public void playGoldSound()
     {
        goldSound.Play();
+    }
+
+    public void playBlockSound()
+    {
+        swordSound.Play();
+    }
+
+    public void playSwordSound()
+    {
+        blockSound.Play();
     }
 }
