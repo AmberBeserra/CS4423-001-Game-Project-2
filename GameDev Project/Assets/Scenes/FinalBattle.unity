@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18269917, g: 0.2284074, b: 0.3071013, a: 1}
+  m_IndirectSpecularColor: {r: 0.1826994, g: 0.228408, b: 0.30710208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1506,6 +1506,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldToScore: {fileID: 0}
+  CurrentScore: 0
+  weakPotionButton: {fileID: 0}
+  strongPotionButton: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!4 &643463357
 Transform:
   m_ObjectHideFlags: 0
@@ -1695,12 +1699,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ceac2be7a331f41b08e75aafc9bb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAnim: {fileID: 0}
   playerText: {fileID: 1659987580}
   enemyText: {fileID: 1897861428}
+  potion1: {fileID: 0}
+  potion2: {fileID: 0}
   turnText: {fileID: 2073330045}
   slider: {fileID: 1939684882}
   attackButton: {fileID: 935958615}
   blockButton: {fileID: 1296030537}
+  scene: 0
   state: 0
 --- !u!4 &713863966
 Transform:
@@ -1913,6 +1921,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853093404}
   m_Mesh: {fileID: 6882987120644314916, guid: da156aff509a63e4ca09a22d774bcef1, type: 3}
+--- !u!1 &882987691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882987693}
+  - component: {fileID: 882987692}
+  m_Layer: 0
+  m_Name: GameScoreLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &882987692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882987691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425838b1c45895140863c0178abfb596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &882987693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882987691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.11245, y: 7.5831676, z: 43.457565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &935958615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,7 +4504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.091847636, g: 0.38351968, b: 0.4528302, a: 0.8862745}
+  m_Color: {r: 0.09019607, g: 0.21532866, b: 0.4509804, a: 0.8862745}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
