@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
 	public Text GoldToScore;
 
-	int CurrentScore;
+	public int CurrentScore;
 	static int weakPotion = 0;
 	static int strongPotion = 0;
 
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 		else
 		{
 			CurrentScore -= 60; //otherwise, subtracts correct amount of gold from CurrentScore and update the gold counter on screen
-			//GoldToScore.text = CurrentScore.ToString();
+			GoldToScore.text = CurrentScore.ToString();
 			PlayerPrefs.SetInt("gold_score_counter", CurrentScore);
 			//add item to player inventory
 		}

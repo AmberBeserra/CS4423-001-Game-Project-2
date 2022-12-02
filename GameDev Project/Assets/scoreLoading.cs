@@ -19,9 +19,9 @@ public class scoreLoading : MonoBehaviour
             }
             else //provides a new counter with a base gold of 100
             {
-                CurrentScore = 100;
-                GoldToScore.text = "100";
-                PlayerPrefs.SetInt("gold_score_counter", 100);
+                CurrentScore = 200;
+                GoldToScore.text = "200";
+                PlayerPrefs.SetInt("gold_score_counter", 200);
             }
         }
     }
