@@ -30,4 +30,8 @@ public class Unit : MonoBehaviour
 	{
 		return damage;
 	}
+	public void heal(int healAmt)
+	{
+		unitHP.Heal(healAmt);
+	}
 }

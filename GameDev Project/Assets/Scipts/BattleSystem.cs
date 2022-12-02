@@ -29,6 +29,11 @@ public class BattleSystem : MonoBehaviour
     public Slider slider;
     public GameObject attackButton;
     public GameObject blockButton;
+    public GameObject inventory;
+    public GameObject inventoryButton;
+    //public GameObject useWeak;
+    //public GameObject useStrong;
+
 
 
     public int scene;
@@ -37,6 +42,7 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inventory.SetActive(false);
         myAnim = GetComponent<Animator>();
 
         state = BattleState.START;
@@ -45,8 +51,8 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator Setup()
     {
-        //potion1.text = "Potion1: " + FindObjectOfType<GameManager>().GetPotions();
-        //potion2.text = "Potion2: " + FindObjectOfType<GameManager>().GetPotions2();
+        potion1.text = "" + FindObjectOfType<GameManager>().GetPotions();
+        potion2.text = "" + FindObjectOfType<GameManager>().GetPotions2();
 
         playerUnit = GameObject.Find("PCfacingright").GetComponent<Unit>();
         enemyUnit = GameObject.Find("slime").GetComponent<Unit>();
@@ -73,6 +79,7 @@ public class BattleSystem : MonoBehaviour
         turnText.text = "Player's Turn";
         attackButton.SetActive(true);
         blockButton.SetActive(true);
+        inventoryButton.SetActive(true);
     }
     //handles what happens when the attack button is clicked
     IEnumerator PlayerAttack()
@@ -80,16 +87,14 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.ATTACKED;
 
-
-
-
-
         bool dead = enemyUnit.Damaged(playerUnit.getDamage());
 
         enemyText.text = "Evil Slime " + enemyUnit.unitHP.Health + "/" + enemyUnit.unitHP.HealthMax;
         turnText.text = "Player Attacks!";
         attackButton.SetActive(false);
         blockButton.SetActive(false);
+        inventoryButton.SetActive(false);
+        inventory.SetActive(false);
         yield return new WaitForSeconds(2f);
 
         if (dead)
@@ -116,6 +121,8 @@ public class BattleSystem : MonoBehaviour
         blocking = true;
         attackButton.SetActive(false);
         blockButton.SetActive(false);
+        inventoryButton.SetActive(false);
+        inventory.SetActive(false);
         yield return new WaitForSeconds(2f);
         state = BattleState.ENEMY;
         StartCoroutine(enemyAttack());
@@ -125,6 +132,12 @@ public class BattleSystem : MonoBehaviour
     //handles enemy attack
     IEnumerator enemyAttack()
     {
+        inventory.SetActive(false);
+        attackButton.SetActive(false);
+        blockButton.SetActive(false);
+        inventoryButton.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        
         //checks if attack is already charged
 
 
@@ -231,5 +244,40 @@ public class BattleSystem : MonoBehaviour
         myAnim.SetTrigger("Block");
         StartCoroutine(PlayerBlock());
     }
+    public void useWeakButton()
+    {
+        if(FindObjectOfType<GameManager>().GetPotions() > 0){
+            playerUnit.heal(10);
+            slider.value = playerUnit.unitHP.Health;
+            playerText.text = "Player " + playerUnit.unitHP.Health + "/" + playerUnit.unitHP.HealthMax;
+            FindObjectOfType<GameManager>().useWeakPotion();
+            potion1.text = "" + FindObjectOfType<GameManager>().GetPotions();
+            turnText.text = "Used Potion";
+            inventory.SetActive(false);
+            state = BattleState.ENEMY;
+            StartCoroutine(enemyAttack());
+        }
+        else{
+            Debug.Log("You have no Weak Potions!");
+        }
+    }
+    public void useStrongButton()
+    {
+        if(FindObjectOfType<GameManager>().GetPotions2() > 0){
+            playerUnit.heal(20);
+            slider.value = playerUnit.unitHP.Health;
+            playerText.text = "Player " + playerUnit.unitHP.Health + "/" + playerUnit.unitHP.HealthMax;
+            FindObjectOfType<GameManager>().useStrongPotion();
+            potion2.text = "" + FindObjectOfType<GameManager>().GetPotions2();
+            inventory.SetActive(false);
+            turnText.text = "Used Potion";
+            state = BattleState.ENEMY;
+            StartCoroutine(enemyAttack());
+        }
+        else{
+            Debug.Log("You have no Strong Potions!");
+        }
+    }
+
 
 }

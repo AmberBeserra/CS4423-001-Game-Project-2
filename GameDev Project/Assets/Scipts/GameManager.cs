@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
     }
 	public void ContinueButton()
 	{
-		SceneManager.LoadScene("FirstBattle");
+		SceneManager.LoadScene("FinalBattle");
 	}
 	public int GetPotions()
 	{
@@ -137,5 +137,13 @@ public class GameManager : MonoBehaviour
 	public int GetPotions2()
 	{
 		return strongPotion;
+	}
+	public void useWeakPotion()
+	{
+		weakPotion--;
+	}
+	public void useStrongPotion()
+	{
+		strongPotion--;
 	}
 }
