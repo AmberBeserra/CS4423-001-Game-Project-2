@@ -6,6 +6,6 @@ using UnityEngine.UI;
 
 public class GoldFoundation : MonoBehaviour
 {
-    public TMP_Text goldAmountTxt;
+    public Text goldAmountTxt;
     
 }

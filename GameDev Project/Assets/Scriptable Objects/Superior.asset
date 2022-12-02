@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Superior Potion
   description: A fine alternative to medical attention, heals for 5 Hp.
-  price: 10
+  price: 80
   image: {fileID: 0}

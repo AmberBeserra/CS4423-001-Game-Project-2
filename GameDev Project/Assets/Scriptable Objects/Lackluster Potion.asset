@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Lackluster Potion
   description: A potion thats well past its sell by date, heals for x HP.
-  price: 1
+  price: 60
   image: {fileID: 0}
